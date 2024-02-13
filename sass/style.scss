@@ -12,6 +12,11 @@
     padding: 0;
 }
 
+.center {
+    padding-left: calc(50vw - 584px);
+    padding-right: calc(50vw - 584px);
+  }
+
 a, button {
     transition: .3s;
     cursor: pointer;
@@ -20,3 +25,115 @@ img {
     display: block;
     max-width: 100%;
 }
+
+body{
+    background: #1f1f1f;
+}
+
+.main{
+    color: aliceblue;
+}
+
+.input{
+    // display: block;
+    // margin-left: 40px;
+    margin-top: 20px;
+    text-align: center;
+    // width: 400px;
+    // height: 20px;
+}
+
+.requests-history{
+    position: fixed;
+    display: block;
+    padding: 10px 20px;
+    left: 85%;
+    top: 30px;
+    border: 1px solid white;
+    color: aliceblue;
+
+}
+
+.requests-history-title{
+    padding-bottom: 10px;
+}
+
+.requests-history-item{
+    cursor: pointer;
+}
+
+.search-results__item{
+    display: flex;
+    background: #353535;
+    margin:40px 80px;
+    gap: 40px;
+
+}
+
+.search-results__title{
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.search-results-link{
+    text-decoration: none;
+    color: #353535;
+    background: antiquewhite;
+    padding: 5px;
+    margin-top: 10px;
+    width: 120px;
+    border-radius: 5px;
+
+}
+
+.material-symbols-outlined{
+    width: 5px;
+    height: 5px;
+}
+
+.single__imdb-score-value{
+    color: yellowgreen;
+    font-weight: 900;
+    font-size: 21px;   
+}
+
+.single__imdb-score{
+    padding-bottom: 30px;
+}
+
+.search-results__plot{
+    width: 500px;
+}
+
+.search-results__data{
+    padding-bottom: 30px;
+}
+
+.search-results__type{
+    padding-bottom: 20px;
+}
+
+.search-results__year{
+    padding-bottom: 40px;
+}
+
+.movies-link{
+    display: block;
+    text-decoration: none;
+    color: #353535;
+    background: antiquewhite;
+    padding: 5px;
+    margin-top: 10px;
+    width: 120px;
+    border-radius: 5px;
+}
+
+.header-title{
+    display: block;
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 15px;
+}
+

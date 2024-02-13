@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="center">
-        <a href="index.html">
+    <header class="">
+        <a class="header-title" href="index.html">
             Movie Finder
         </a>
     </header>
-
-    <input class="input" type="text" name="query" placeholder="Enter Movie Title">
+    <div class="input">
+        <input type="text" name="query" placeholder="Enter Movie Title">
+    </div>
+    
 
     <!-- <form class="center form" name="searchMovieForm">
         <input class="form__input" type="text" name="query" placeholder="Enter Movie Title">
@@ -25,30 +27,35 @@
         </button>
     </form> -->
 
-    <main class="center">
+    <main class="center main">
         <section class="search-results">
-            <h1>
-                Search results for: <span class="query"></span>
-            </h1>
             <!-- <article class="search-results__item">
                 <picture class="search-results__poster">
                     <img class="search-results__poster-img" src="https://www.omdbapi.com/src/poster.jpg" alt="#">
                 </picture>
-                <h2 class="search-results__title">
-                    Lorem ipsum dolor sit amet.
-                </h2>
-                <p class="search-results__plot">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo sit voluptatem eligendi, molestiae culpa vel rem numquam quae eaque error?
-                </p>
-                <a href="#">
-                    About
-                    <span class="material-symbols-outlined">
-                        arrow_forward_ios
-                    </span>
-                </a>
-                
+                <div class="search-results-data">
+                    <h2 class="search-results__title">
+                        Lorem ipsum dolor sit amet.
+                    </h2>
+                    <p class="search-results__type">
+                        Type: Movie
+                    </p>
+                    <p class="search-results__year">
+                        Year: 2020
+                    </p>
+                    <a class="search-results-link" href="#">
+                        About
+                    </a>
+                </div>
             </article> -->
         </section>
+        <div class="requests-history">
+            <h4 class="requests-history-title">Requests history</h4>
+            <div class="requests-history-item"></div>
+        </div>
+
+
+
     </main>
     
 </body>
