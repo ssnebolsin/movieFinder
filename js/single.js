@@ -1,4 +1,4 @@
-const BASE_URL = "http://www.omdbapi.com/?apikey=f81df190&"
+const BASE_URL = "https://www.omdbapi.com/?apikey=f81df190&"
 let searchParams = new URLSearchParams(window.location.search)
 console.log(window.location.search)
 console.log(searchParams.get('i'))
@@ -12,6 +12,10 @@ if(searchParams.has('i')){
             document.querySelector('.single__title').innerText = data.Title
             document.querySelector(".single__plot").innerText = data.Plot
             document.querySelector(".single__imdb-score-value").innerText = data.imdbRating
+            document.querySelector(".single__genre").innerText = `Genre: ${data.Genre}`
+            document.querySelector(".single__country").innerText = `Country: ${data.Country}`
+            document.querySelector(".single__lang").innerText = `Language: ${data.Language}`
+            document.querySelector(".single__runtime").innerText = `Runtime: ${data.Runtime}`
             console.log(data)
     })
 

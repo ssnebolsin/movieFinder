@@ -1,9 +1,9 @@
-const BASE_URL = "http://www.omdbapi.com/?apikey=f81df190&"
+const BASE_URL = "https://www.omdbapi.com/?apikey=f81df190&"
 const queryField = document.querySelector('.input')
 let counter = 0
 let results = document.querySelector('.search-results')
 let loaded = false
-let historyItemsList = []
+let historyItemsList
 
 
 
@@ -110,16 +110,24 @@ function showItem(item){
 
 function localStorageSetHistoryItem(item){
     historyItemsList = localStorage.getItem('historyItems')
-    historyItemsList = historyItemsList.split(',')
+    if(historyItemsList){
+        historyItemsList = historyItemsList.split(',')
+    } else {
+        historyItemsList = []
+    }
+    
     historyItemsList.push(item)
     localStorage.setItem('historyItems', historyItemsList)
 }
 
 function localStorageGetHistoryItems (){
     let histItems = localStorage.getItem('historyItems')
-    histItems.split(',').forEach(item => {
+    if(histItems){
+        histItems.split(',').forEach(item => {
         history.innerHTML += showItem(item)
-    })
+        })
+    }
+
 }
 
 let historyAll = document.querySelectorAll('.requests-history')
