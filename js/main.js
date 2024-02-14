@@ -89,7 +89,7 @@ document.addEventListener('scroll', ()=> {
 })
 
 // ######### Sockets ###########
-const history = document.querySelector('.requests-history')
+const history = document.querySelector('.search-requests')
 
 const wsUri = 'wss://socketsbay.com/wss/v2/1/d0173ca5185ec7768d52d25fc4c277b7/'
 
@@ -105,7 +105,7 @@ chatSocket.onmessage = function (event){
 
 function showItem(item){
     console.log(item)
-    return `<div class="requests-history-item">${item}</div>`
+    return `<div class="search-requests-item">${item}</div>`
 }
 
 function localStorageSetHistoryItem(item){
@@ -130,7 +130,7 @@ function localStorageGetHistoryItems (){
 
 }
 
-let historyAll = document.querySelectorAll('.requests-history')
+let historyAll = document.querySelectorAll('.search-requests')
 
 historyAll.forEach((item)=> {
     item.addEventListener('click', function(e){
