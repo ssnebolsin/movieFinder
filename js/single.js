@@ -3,6 +3,7 @@ let searchParams = new URLSearchParams(window.location.search)
 console.log(window.location.search)
 console.log(searchParams.get('i'))
 
+
 if(searchParams.has('i')){
 
     let movieInfo = getMovie(searchParams.get('i'))
@@ -19,16 +20,24 @@ if(searchParams.has('i')){
             console.log(data)
     })
 
-
-
 } else {
     redirectHome('movie not found')
 }
 
 async function getMovie (query){
+    let loader = document.createElement('div')
+    loader.classList.add('loader')
+    document.body.appendChild(loader)
+
     let res = await fetch(`${BASE_URL}i=${query}&plot=full`)
     let data = await res.json()
+
+    loader.classList.add('loader-hidden')
+    setTimeout(()=>{
+        document.body.removeChild(loader)
+    }, 1000)
     return data
+
 }
 
 function redirectHome (msg){

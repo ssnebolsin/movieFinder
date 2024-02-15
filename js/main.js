@@ -6,7 +6,6 @@ let loaded = false
 let historyItemsList
 
 
-
 window.onload = () => {
     localStorageGetHistoryItems ();
   };
@@ -19,12 +18,22 @@ queryField.addEventListener('input', function(e){
 })
 
 async function searchMovie(query){
+
+    let loader = document.createElement('div')
+    loader.classList.add('loader')
+    document.body.appendChild(loader)
+    
     let res = await fetch(`${BASE_URL}s=${query}`)
     let data = await res.json()
     if(data.Search){
         data.Search.forEach(item => {
         results.appendChild(renderSearchItem(item))
     });
+    loader.classList.add('loader-hidden')
+    setTimeout(()=>{
+        document.body.removeChild(loader)
+    }, 1000)
+    // document.body.removeChild(loader)
     }
 }
 
